@@ -1,12 +1,18 @@
 const getdb = require('../util/database').getDB;
 
+
+//  const ages = 25; const emails="nfsaj";
+// const passwords = 232323; const phoneNos= 245465;
+
+
+
 class userLogin{
     constructor(name, age, email, password,phoneNo){
-        this.name = "ashish";
-        this.email = "kdfads";
-        this.password = "123456";
-        this.phoneNo = 3242;
-        this.age = require('mongodb').age;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phoneNo = phoneNo;
+        this.age = age;
     }
     save(){
         const db = getdb();

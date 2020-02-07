@@ -4,9 +4,10 @@ const express = require('express');
 const userControllers = require('../controllers/user');
 const userdata = require('../models/userLogin');
 
-const router = express.Router();
+const router = new express.Router();
 
-router.post('/', userControllers.postUserData);
+router.post('/signup',userControllers.postUserData
+);
 
 router.get('/a',(req,res,next)=>{
     res.status(200).json({
@@ -17,4 +18,4 @@ router.get('/a',(req,res,next)=>{
 
 router.get('/',userControllers.postUserData)
 console.log('in usr routes');
-module.exports =router;
+module.exports = router;

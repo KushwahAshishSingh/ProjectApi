@@ -3,7 +3,7 @@ const uri = "mongodb+srv://MongoExercise:1234512345@mongodb-n4mfl.mongodb.net/te
 let _db;
 
 const mongoConnect = callback =>{
-    mongoClient.connect(uri,{useNewUrlParser: true})
+    mongoClient.connect(uri,{useNewUrlParser: true,useUnifiedTopology: true})
     .then(client =>{ 
         console.log('connected');
         _db = client.db();

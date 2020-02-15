@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const expressHBS = require('express-handlebars');
+const bodyParser = require('body-parser');
 const mongoConnect = require('./util/database').mongoConnect;
 
 const app = express();
@@ -19,11 +20,12 @@ const userRoutes = require('./routes/user');
 const errorController = require('./controllers/error');
 
 
-app.use(express.json());
 
+app.use(express.json());
+app.use(bodyParser.json());
 
 app.use(userRoutes);
-//app.use(errorController.get404); 
+app.use(errorController.get404); 
 
 
 mongoConnect ( (userRoutes) =>{

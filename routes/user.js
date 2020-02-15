@@ -3,11 +3,14 @@ const express = require('express');
 
 const userControllers = require('../controllers/user');
 const userdata = require('../models/userLogin');
+const yourOcc = require('../models/yourOccRoutes');
 
 const router = new express.Router();
 
-router.post('/signup',userControllers.postUserData
-);
+router.post('/signup',userControllers.postUserData);
+router.post('/userOcc', userControllers.yourOccupation);
+router.post('/state', userControllers.stateRoute);
+router.post('/sport', userControllers.sportData);
 
 router.get('/a',(req,res,next)=>{
     res.status(200).json({
@@ -17,5 +20,5 @@ router.get('/a',(req,res,next)=>{
 
 
 router.get('/',userControllers.postUserData)
-console.log('in usr routes');
+
 module.exports = router;

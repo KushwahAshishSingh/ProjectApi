@@ -1,9 +1,10 @@
 const getdb = require('../util/database').getDB;
 
 
+
 class yourOccRoutes{
-    constructor(occupation){
-        this.occupation = occupation;
+    constructor(ocup){
+        this.occupation = ocup;
     }
     save(){
         const db = getdb();
@@ -23,9 +24,9 @@ class yourOccRoutes{
             .collection('occupation')
             .find()
             .toArray()
-            .then(occupation =>{
-                console.log(occupation);
-                return occupation;
+            .then(occup =>{
+                console.log(occup);
+                return occup;
             })
             .catch(err =>{
                 console.log(err)

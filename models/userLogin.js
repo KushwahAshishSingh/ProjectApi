@@ -10,6 +10,7 @@ class userLogin{
         this.age = age;
     }
     save(){
+         this.id = Math.random().toString();
         const db = getdb();
         return db
         .collection('userInfo')

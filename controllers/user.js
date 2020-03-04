@@ -15,29 +15,30 @@ exports.postUserData = (req,res,next)=>{
     .then(result =>{
         console.log('user created');
         console.log(UserData)
-
     })
     .catch(err =>{
         console.log(err);
-        
-    });
-    next();
-    
+     });
+    next();  
 };
 
 exports.yourOccupation = (req,res,next)=>{
-    const occupation = "ashish";
-    const yourOccu = new yourOccRoute(occupation);
-    yourOccu.save().then(result =>{
+    const occup = req.body.ocup;
+    const yourOccu = new yourOccRoute(occup);
+    console.log('hi')
+    console.log(req.body)
+    yourOccu
+    .save()
+    .then(result =>{
         console.log('your occupation added');
         console.log(yourOccu)
         
     })
     .catch(err =>{
         console.log(err)
-    })
+    });
     next();
-}
+};
 
 exports.stateRoute = (req,res,next)=>{
     const state = "ashish";

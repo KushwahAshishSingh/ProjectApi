@@ -11,6 +11,8 @@ router.post('/signup',userControllers.postUserData);
 router.post('/userOcc', userControllers.yourOccupation);
 router.post('/state', userControllers.stateRoute);
 router.post('/sport', userControllers.sportData);
+router.get('/userdata', userControllers.userData);
+//router.post('/updateUser',userControllers.updateData);
 
 router.get('/a',(req,res,next)=>{
     res.status(200).json({
